@@ -1,0 +1,122 @@
+﻿
+@{
+
+    ViewBag.Title = "RHC Patients";
+    ViewBag.MainHeading = "RHC Patients";
+}
+@section styles
+{
+    <link href="~/plugins/odometer/odometer-theme-car.css" rel="stylesheet" />
+}
+
+@section scripts
+{
+    @*@scripts.Render("~/bundles/ag-grid")*@
+    <script src="~/Plugins/odometer/angular-odometer.js"></script>
+    <script src="~/plugins/odometer/angular-odometer.js"></script>
+    <script src="~/Plugins/Angular/ngMask-master/ngMask.min.js"></script>
+  
+}
+<div>
+    <div ng-controller="BreastCancerCntrl">
+        <div>
+            <div class="block">
+                <div class="block-header block-header-default">
+                    <h3 class="block-title">RHCs Patients</h3>
+                </div>
+                <div class="block-content block-content-full">
+                    <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                        <div class="row m-1">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="fromDateSelected"><strong> From</strong></label>
+                                    <p class="input-group">
+                                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-required="true" ng-model="DataObject.DateFrom" is-open="popup1.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" id="fromDateSelected" name="fromDateSelected" readonly />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="toDateSelected"><strong> To</strong></label>
+                                    <p class="input-group">
+                                        <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-required="true" ng-model="DataObject.DateTo" is-open="popup2.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" id="toDateSelected" name="toDateSelected" readonly />
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar"></i></button>
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3" style="margin-left:10px;">
+                                <div class="form-material ">
+                                    <label><strong>Unique ID</strong></label>
+                                    <input id="DataObject.PatientID" name="PatientID" type="text" placeholder="UniqueID" class="form-control" ng-model="DataObject.PatientID">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-material ">
+                                    <label><strong>CNIC</strong></label>
+                                    <input id="DataObject.CNIC" name="CNIC" type="text" placeholder="XXXX-XXXXXXX-X" class="form-control" mask='99999-9999999-9' ng-model="DataObject.CNIC">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row m-1">
+                            <div class="col-md-4">
+                                <div class="form-material ">
+                                    <label><strong>Contact No</strong></label>
+                                    <input id="DataObject.ContactNo" name="ContactNo" type="text" placeholder="XXXX-XXXXXXX" mask='9999-9999999' class="form-control" ng-model="DataObject.ContactNo">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row m-1">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <button class="btn btn-primary" style="margin-top: 15px;" ng-click="GetPatientsData()"> <i class="fa fa-clone"></i> Get Records</button>
+                                    <button class="btn btn-primary" style="margin-top: 15px;" ng-click="clearSelectedFilters()"> <i class="fa fa-clone"></i> Clear</button>
+                                    <button class="btn btn-primary" style="margin-top: 15px;" ng-click="PatientExcelReport()"> <i class="fa fa-clone"></i> Export</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="table-responsive" style="overflow-x:scroll;">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr#</th>
+                                            <th>Patient Name</th>
+                                            <th>Age</th>
+                                            <th>Contact No</th>
+                                            <th>Reg#</th>
+                                            <th>Reg Date</th>
+                                            <th>Address</th>
+                                            <th>HealthFacility</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tr ng-repeat="r in PatientsData | filter : Search">
+                                            <th scope="row">{{((DataObject.Page - 1) * DataObject.PageSize) + ($index+1)}}</th>
+                                            <td>{{r.PatientName}}</td>
+                                            <td>{{r.Age}}</td>
+                                            <td>{{r.PhoneNo}}</td>
+                                            <td>{{r.RegistrationNo}}</td>
+                                            <td>{{r.RegDate}}</td>
+                                            <td>{{r.Address}}</td>
+                                            <td>{{r.HealthFacility}}</td>
+                                            <td>
+                                                <a ng-click="GetPatientDetails(r.PatientRegistationID)" class="btn btn-success">Details</a>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                                <ul uib-pagination total-items="DataObject.TotalRecords" ng-model="DataObject.Page" items-per-page="DataObject.PageSize" ng-change="GetPatientsData()" max-size="50" class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

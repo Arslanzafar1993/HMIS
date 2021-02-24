@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HMIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="This is an example dashboard created using build-in elements and components.">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link href="~/Plugins/Angular/ui_select_master/select.css" rel="stylesheet" />
+    <link href="~/Plugins/Angular/angular-ladda/ladda.min.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+        <!-- START HEADER -->
+        @{ Html.RenderPartial("_Header"); }
+        <!-- END HEADER -->
+        <!-- START THEMESETTINGS -->
+        @{ Html.RenderPartial("_ThemeSettings"); }
+        <!-- END THEMESETTINGS -->
+
+        <div class="app-main">
+            <!-- START SIDEMENU -->
+            @{ Html.RenderPartial("_SideMenu"); }
+            <!-- END SIDEMENU -->
+
+            <div class="app-main__outer">
+                <div class="app-main__inner">
+                    @RenderBody()
+                </div>
+                <!-- START FOOTER -->
+                @{ Html.RenderPartial("_Footer"); }
+                <!-- END FOOTER -->
+            </div>
+        </div>
+    </div>
+    <!-- Page JS Plugins -->
+    <!-- Page JS Code -->
+    <!-- AngularJS JS 1.6.4 starts -->
+    <script src="~/Plugins/Angular/angular/angular.js"></script>
+
+    <script src="~/Plugins/Angular/angular/angular-animate.js"></script>
+    <script src="~/Plugins/Angular/angular/angular-sanitize.js"></script>
+    @*<script src="~/Scripts/Plugins/Angular/angular/angular-messages.min.js"></script>*@
+    <!-- AngularJS end-->
+    <script src="~/Plugins/Angular/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="~/Plugins/Angular/ui_select_master/select.js"></script>
+
+    <script src="~/Plugins/Angular/angular-loading-bar-master/src/loading-bar.js"></script>
+    <script src="~/Plugins/Angular/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="~/Plugins/Angular/angular-ladda/spin.min.js"></script>
+    <script src="~/Plugins/Angular/angular-ladda/ladda.min.js"></script>
+    <script src="~/Plugins/Angular/angular-ladda/angular-ladda.js"></script>
+    <script src="~/js/main.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -15,7 +15,11 @@ namespace HMIS
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            // Configuration = configuration;
+            Configuration = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                //.AddJsonFile("bundleconfig.json")
+                .Build();
         }
 
         public IConfiguration Configuration { get; }

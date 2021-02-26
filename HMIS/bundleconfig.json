@@ -1,14 +1,45 @@
 [
   {
-    "outputFileName": "wwwroot/css/main.css",
+    "outputFileName": "wwwroot/css/site.min.css",
     "inputFiles": [
+      "wwwroot/css/site.css",
       "wwwroot/css/main.css"
     ]
   },
   {
-    "outputFileName": "wwwroot/js/main.js",
+    "outputFileName": "wwwroot/css/AngularFiles.min.css",
     "inputFiles": [
-      "wwwroot/js/main.js"
+      "wwwroot/css/site.css",
+      "wwwroot/css/main.css"
+    ]
+  },
+  //{
+  //  "outputFileName": "wwwroot/css/AGGridFiles.min.css",
+  //  "inputFiles": [
+  //    "wwwroot/Plugins/Angular/ag_grid_master_v20/styles/ag-grid.css",
+  //    "wwwroot/Plugins/Angular/ag_grid_master_v20/styles/ag-grid.css",
+  //    "wwwroot/Plugins/Angular/ag_grid_master_v20/styles/g-theme-balham.css",
+  //    "wwwroot/Plugins/Angular/ag_grid_master_v20/styles/ag-theme-bootstrap.css",
+  //    "wwwroot/Plugins/Angular/ag_grid_master_v20/styles/ag-theme-fresh.css",
+  //    "wwwroot/Plugins/Angular/ag_grid_master_v20/styles/ag-theme-material.css"
+  //  ]
+  //},
+  //{
+  //  "outputFileName": "wwwroot/js/AgGridFiles.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/Plugins/Angular/ag_grid_master_v20/ag-grid.js"
+  //  ],
+  //  "minify": {
+  //    "enabled": true,
+  //    "renameLocals": true
+  //  },
+  //  "sourceMap": false
+  //},
+  {
+    "outputFileName": "wwwroot/js/AngularFiles.min.js",
+    "inputFiles": [
+      "wwwroot/js/AngularFiles.js",
+      "wwwroot/Plugins/Angular/angular/Angular.js"
     ],
     "minify": {
       "enabled": true,

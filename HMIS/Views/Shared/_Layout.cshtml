@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
     <meta charset="utf-8">
@@ -11,9 +11,7 @@
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <link href="~/Plugins/Angular/ui_select_master/select.css" rel="stylesheet" />
-    <link href="~/Plugins/Angular/angular-ladda/ladda.min.css" rel="stylesheet" />
-    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/css/site.min.css" rel="stylesheet" />
     @RenderSection("styles", required: false)
 </head>
 <body>
@@ -40,24 +38,15 @@
             </div>
         </div>
     </div>
-    <!-- Page JS Plugins -->
-    <!-- Page JS Code -->
-    <!-- AngularJS JS 1.6.4 starts -->
-    <script src="~/Plugins/Angular/angular/angular.js"></script>
-
-    <script src="~/Plugins/Angular/angular/angular-animate.js"></script>
-    <script src="~/Plugins/Angular/angular/angular-sanitize.js"></script>
-    @*<script src="~/Scripts/Plugins/Angular/angular/angular-messages.min.js"></script>*@
-    <!-- AngularJS end-->
-    <script src="~/Plugins/Angular/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
-    <script src="~/Plugins/Angular/ui_select_master/select.js"></script>
-
-    <script src="~/Plugins/Angular/angular-loading-bar-master/src/loading-bar.js"></script>
-    <script src="~/Plugins/Angular/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
-    <script src="~/Plugins/Angular/angular-ladda/spin.min.js"></script>
-    <script src="~/Plugins/Angular/angular-ladda/ladda.min.js"></script>
-    <script src="~/Plugins/Angular/angular-ladda/angular-ladda.js"></script>
+   
     <script src="~/js/main.js"></script>
+    <script src="~/js/AngularFiles.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+    </script>
+
     @RenderSection("scripts", required: false)
+
+
 </body>
 </html>

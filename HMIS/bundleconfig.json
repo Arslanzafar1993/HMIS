@@ -1,15 +1,9 @@
 [
-  {
-    "outputFileName": "wwwroot/css/site.min.css",
-    "inputFiles": [
-      "wwwroot/css/site.css",
-      "wwwroot/css/main.css"
-    ]
-  },
+ 
   {
     "outputFileName": "wwwroot/css/AngularFiles.min.css",
     "inputFiles": [
-      "wwwroot/css/site.css",
+      "wwwroot/css/AngularFiles.css",
       "wwwroot/css/main.css"
     ]
   },

@@ -1,5 +1,5 @@
 [
- 
+
   {
     "outputFileName": "wwwroot/css/AngularFiles.min.css",
     "inputFiles": [
@@ -7,6 +7,12 @@
       "wwwroot/css/main.css"
     ]
   },
+
+
+
+
+
+
   //{
   //  "outputFileName": "wwwroot/css/AGGridFiles.min.css",
   //  "inputFiles": [

@@ -1,4 +1,7 @@
-﻿
-app.controller('formCtrl', function ($scope) {
-    toastr.success('The process has been saved.', 'Success');
-    });
+﻿app.controller('formCtrl', ["$scope",  "$http", function ($scope, $http) {
+    $scope.fetchPatientRecord = function () {
+        $('.alert').alert()
+
+    };
+}]);
+

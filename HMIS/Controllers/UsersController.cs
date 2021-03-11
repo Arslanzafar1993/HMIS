@@ -16,5 +16,9 @@ namespace HMIS.Controllers
         {
             return View();
         }
+        public IActionResult Login()
+        {
+            return View();
+        }
     }
 }

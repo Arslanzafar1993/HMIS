@@ -1,7 +1,11 @@
-﻿<div>
+﻿@section scripts{
+    <script src="~/js/test.js"></script>
+}
+<div ng-controller="formCtrl">
     <p>Input something in the input box:</p>
     <p>Name: <input type="text" ng-model="name"></p>
     <p ng-bind="name"></p>
+    <input type="button" ng-click="fetchPatientRecord();" value="shani" />
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -58,3 +62,6 @@
         </tbody>
     </table>
 </div>
+<button class="btn btn-sm btn-danger" ng-confirm-click="Are you sure to delete this record ?" confirmed-click="removeUser($index)">Delete</button>
+
+

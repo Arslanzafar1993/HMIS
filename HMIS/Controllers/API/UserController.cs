@@ -25,7 +25,7 @@ namespace HMIS.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IConfiguration _configuration;
-       // private readonly UserService _UserService;
+        // private readonly UserService _UserService;
 
         public UserController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
@@ -54,9 +54,7 @@ namespace HMIS.Controllers
                     {
                         authClaims.Add(new Claim(ClaimTypes.Role, userRole));
                     }
-
                     var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
-
                     var token = new JwtSecurityToken(
                         issuer: _configuration["JWT:ValidIssuer"],
                         audience: _configuration["JWT:ValidAudience"],
@@ -64,7 +62,6 @@ namespace HMIS.Controllers
                         claims: authClaims,
                         signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                         );
-
                     return Ok(new
                     {
                         token = new JwtSecurityTokenHandler().WriteToken(token),
@@ -77,7 +74,7 @@ namespace HMIS.Controllers
             {
                 return null;
             }
-        }
+        } 
 
         [HttpPost]
         [Route("Register")]

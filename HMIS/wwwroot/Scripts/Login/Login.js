@@ -1,21 +1,33 @@
 ﻿function Login() {
     try {
-debugger;
         var Object = {
             Username: $("#UserName").val(),
             Password: $("#password").val()
         };
-
+        if (Object.Username == null || Object.Username == '' || Object.Username == undefined) {
+            alert("Please Enter UserName")
+            return;
+        }
+        if (Object.Password == null || Object.Password == '' || Object.Password == undefined) {
+            alert("Please Enter Password")
+            return;
+        }
         $.ajax({
-            url: '/api/user/login',
+            url: '/api/User/login',
             type: 'POST',
-            data: Object,
-            dataType: 'json',
+            data: JSON.stringify(Object),
+            // dataType: 'json',
+            contentType: 'application/json',
             success: function (data) {
-                alert('Data: ' + data);
+                if (data != null && data != undefined && (data.token != null && data.token != '' && data.token != undefined)) {
+                    window.open('/Users/adduser');
+                }
+                else {
+                    alert("UserName or Password is Incorrect")
+                }
             },
             error: function (request, error) {
-                alert("Request: " + JSON.stringify(request));
+                alert("UserName or Password is Incorrect")
             }
         });
     }

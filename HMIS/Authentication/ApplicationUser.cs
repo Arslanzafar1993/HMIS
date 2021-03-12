@@ -8,6 +8,7 @@ namespace HMIS.Authentication
     {
         [MaxLength(50)]
         public string CNIC { get; set; }
+        public string FullName { get; set; }
         public string RawPassword { get; set; }
         [MaxLength(120)]
         public string RawConfirmPassword { get; set; }
@@ -15,6 +16,9 @@ namespace HMIS.Authentication
         public string HashConfirmPassword { get; set; }
         [MaxLength(200)]
         public string HealthFacilityCode { get; set; }
+        public bool EmailSendStatus { get; set; }
+        public long LastupdatedsendemailId { get; set; }
+        public int DesignationID { get; set; }
         public bool Status { get; set; }
         public bool? IsDeleted { get; set; }
         [MaxLength(200)]

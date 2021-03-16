@@ -37,6 +37,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BAL\BAL.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
+    <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
   </ItemGroup>
 
 </Project>

@@ -15,6 +15,8 @@ namespace Models.Users
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string HealthFacilityCode { get; set; }
+
+        public bool Active { get; set; }
         public string division { get; set; }
         public string district { get; set; }
         public string tehsil { get; set; }

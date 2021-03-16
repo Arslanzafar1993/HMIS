@@ -1,7 +1,7 @@
 ﻿@section scripts{
     <script src="~/Scripts/Users/Users.js"></script>
 }
-<div ng-controller="AddUser">
+<div ng-controller="UserController">
     <div class="main-card mb-3 card">
         <div class="card-body">
             <h5 class="card-title">Add User</h5>
@@ -15,13 +15,13 @@
                     <div class="form-group row">
                         <div class="col-md-6">
                             <div class="form-material form-material-success">
-                                <input class="form-control" id="searchBysearchUniqueId" placeholder="Full Name" type="text" ng-model="AddEditPatient.Username">
+                                <input class="form-control"  placeholder="Full Name" type="text" ng-model="AddEditPatient.Username">
                                 <label for="searchBysearchUniqueId">Full Name </label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-material form-material-success">
-                                <input class="form-control" id="searchByCnic" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.Email">
+                                <input class="form-control" placeholder="Email" type="text" ng-model="AddEditPatient.Email">
                                 <label for="searchByCnic">Email </label>
                             </div>
 
@@ -30,13 +30,13 @@
                     <div class="form-group row">
                         <div class="col-md-6">
                             <div class="form-material form-material-success">
-                                <input class="form-control" id="searchByCnic" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.CNIC">
+                                <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.CNIC">
                                 <label for="searchByCnic">CNIC </label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-material form-material-success">
-                                <input class="form-control" id="searchBysearchUniqueId" type="text" placeholder="XXXX-XXXXXXX" ng-model="AddEditPatient.ContactNumber">
+                                <input class="form-control"  type="text" placeholder="XXXX-XXXXXXX" ng-model="AddEditPatient.ContactNumber">
                                 <label for="searchBysearchUniqueId">Phone Number  </label>
                             </div>
                         </div>
@@ -44,79 +44,78 @@
                     <div class="form-group row">
                         <div class="col-md-6">
                             <div class="form-material form-material-success">
-                                <input class="form-control" id="searchByCnic" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.Password">
+                                <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.Password">
                                 <label for="searchByCnic"> Password </label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-material form-material-success">
-                                <input class="form-control" id="searchByCnic" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.ConfirmPassword">
+                                <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.ConfirmPassword">
                                 <label for="searchByCnic">Confirm Password </label>
                             </div>
                         </div>
 
                     </div>
                     @*<div class="form-group row">
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <select>
-                                    <option></option>
-                                </select>
-                                <label for="searchByCnic">Division </label>
+                            <div class="col-md-6">
+                                <div class="form-material form-material-success">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                    <label for="searchByCnic">Division </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <select>
-                                    <option></option>
-                                </select>
-                                <label for="searchByCnic">District </label>
+                            <div class="col-md-6">
+                                <div class="form-material form-material-success">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                    <label for="searchByCnic">District </label>
+                                </div>
                             </div>
-                        </div>
 
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <select>
-                                    <option></option>
-                                </select>
-                                <label for="searchByCnic">Tehsil </label>
-                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <select>
-                                    <option></option>
-                                </select>
-                                <label for="searchByCnic">Hospital </label>
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <div class="form-material form-material-success">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                    <label for="searchByCnic">Tehsil </label>
+                                </div>
                             </div>
-                        </div>
-                    </div>*@
+                            <div class="col-md-6">
+                                <div class="form-material form-material-success">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                    <label for="searchByCnic">Hospital </label>
+                                </div>
+                            </div>
+                        </div>*@
                     @*<div class="form-group row">
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <select>
-                                    <option></option>
-                                </select>
-                                <label for="searchByCnic">Occuptaion </label>
+                            <div class="col-md-6">
+                                <div class="form-material form-material-success">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                    <label for="searchByCnic">Occuptaion </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <select>
-                                    <option></option>
-                                </select>
-                                <label for="searchByCnic">Designation </label>
+                            <div class="col-md-6">
+                                <div class="form-material form-material-success">
+                                    <select>
+                                        <option></option>
+                                    </select>
+                                    <label for="searchByCnic">Designation </label>
+                                </div>
                             </div>
-                        </div>
-                    </div>*@
+                        </div>*@
                     <div class="form-group row">
-                        
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <input class="form-control" id="searchByCnic" type="checkbox" ng-model="AddEditPatient.Active">
 
+                        <div class="col-md-3">
+                            <div>
+                                <input type="checkbox" ng-model="AddEditPatient.Active">
                                 <label for="searchByCnic">Active </label>
                             </div>
                         </div>
@@ -125,28 +124,55 @@
                         <button type="button" class="btn btn-success btn-sm" ng-click="SaveUser();">Add</button>
                     </div>
                     @*<div class="col-md-6">
-            <div class="form-material form-material-success">
-                <select>
-                    <option></option>
-                </select>
-                <label for="searchByCnic">Tehsil </label>
-            </div>
-        </div>*@
+                            <div class="form-material form-material-success">
+                                <select>
+                                    <option></option>
+                                </select>
+                                <label for="searchByCnic">Tehsil </label>
+                            </div>
+                        </div>*@
                     @*<div class="col-md-2">
-            <div class="form-group">
-                <label><strong>Disease</strong></label>
-                <ui-select theme="select2" title="Choose a type">
-                    <ui-select-match placeholder="Select a Name">{{$item}}</ui-select-match>
-                    <ui-select-choices repeat="item in diseases | filter:  $select.search">
-                        <div ng-bind-html="item"></div>
-                    </ui-select-choices>
-                    <div ng-bind-html="item">gfgfg</div>
-                </ui-select>
-            </div>
-        </div>
-        {{diseases}}*@
+                            <div class="form-group">
+                                <label><strong>Disease</strong></label>
+                                <ui-select theme="select2" title="Choose a type">
+                                    <ui-select-match placeholder="Select a Name">{{$item}}</ui-select-match>
+                                    <ui-select-choices repeat="item in diseases | filter:  $select.search">
+                                        <div ng-bind-html="item"></div>
+                                    </ui-select-choices>
+                                    <div ng-bind-html="item">gfgfg</div>
+                                </ui-select>
+                            </div>
+                        </div>
+                        {{diseases}}*@
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
     </div>
 </div>

@@ -13,8 +13,23 @@
     "outputFileName": "wwwroot/js/AngularFiles.min.js",
     "inputFiles": [
       "wwwroot/js/AngularFiles.js",
+      "wwwroot/Plugins/jquery-ui/jquery-ui.js",
       "wwwroot/Plugins/Angular/angular/Angular.js",
-      "wwwroot/Plugins/Angular/ui_select_master/select.js"
+
+
+      "wwwroot/Plugins/Angular/angular/angular-animate.js",
+      "wwwroot/Plugins/Angular/angular/angular-sanitize.js",
+
+      "wwwroot/Plugins/Angular/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js",
+      "wwwroot/Plugins/Angular/ui_select_master/select.js",
+
+
+      "wwwroot/Plugins/Angular/angular-loading-bar-master/src/loading-bar.js",
+      "wwwroot/Plugins/JS/underscore/underscore-min.js",
+      //"wwwroot/Plugins/Angular/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js",
+      "wwwroot/Plugins/Angular/angular-ladda/spin.min.js",
+      "wwwroot/Plugins/Angular/angular-ladda/ladda.min.js",
+      "wwwroot/Plugins/Angular/angular-ladda/angular-ladda.js"
     ],
     "minify": {
       "enabled": true,

@@ -18,6 +18,12 @@ namespace HMIS.Controllers
         {
             return View();
         }
+        public IActionResult RolesList(String ID)
+        {
+            ViewBag.UserID = ID;
+            return View();
+        }
+      
         public IActionResult Login()
         {
             return View();

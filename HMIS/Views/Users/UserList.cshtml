@@ -1,73 +1,52 @@
-﻿
-@{
-    ViewData["Title"] = "UserList";
+﻿@section scripts{
+    <script src="~/Scripts/Users/Users.js"></script>
 }
-<h1>UserList</h1>
-
-<div class="container mt-3">
-    <h2>Modal Example</h2>
-    <!-- Button to Open the Modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-        Open modal
-    </button>
-
-    <!-- The Modal -->
-    
-
+<div ng-controller="UserController">
+    <div class="main-card mb-3 card">
+        <table class="table table-bordered table-striped table-vcenter js-dataTable-full dataTable no-footer" id="DataTables_Table_1">
+            <thead>
+                <tr>
+                    <th>Sr No.</th>
+                    <th>
+                        <strong>User Name</strong>
+                        <div></div>
+                    </th>
+                    <th>
+                        <strong>Email</strong>
+                        <div></div>
+                    </th>
+                    <th>
+                        <strong>CNIC</strong>
+                        <div></div>
+                    </th>
+                    <th>
+                        <strong>Phone Number</strong>
+                        <div></div>
+                    </th>
+                    <th>
+                        <strong>Created Date</strong>
+                        <div></div>
+                    </th>
+                    <th>
+                        <strong>Actions</strong>
+                        <div></div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in UserList">
+                    <td>{{$index+1}}</td>
+                    <td>{{item.userName}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.cnic}}</td>
+                    <td>{{item.phoneNumber}}</td>
+                    <td>{{item.createdOn}}</td>
+                    <td><button type="button" class="btn btn-alt-primary" value="Manage Roles" ng-click="OpenUserRoleList(item.id)">Manage Roles</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-<table class="table">
-    <thead class="thead-dark">
-        <tr> 
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-        </tr>
-    </tbody>
-</table>
 
-<table class="table">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-        </tr>
-    </tbody>
-</table>
+
 

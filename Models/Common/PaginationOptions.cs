@@ -37,42 +37,42 @@ namespace Models.Common
 
     public class PaginationViewModel
     {
-        public PaginationViewModel()
-        {
-            Filters = new List<FilterViewModel>();
-            Sorts = new List<SortViewModel>();
-        }
-        public int Draw { get; set; }
-        public int Page { get; set; }
-        public int PageSize { get; set; }
-        public int TotalRecords { get; set; }
-        public string Search { get; set; }
-        public string SortBy { get; set; }
-        public string SortByFieldName { get; set; }
-        public int SortIndex { get; set; } = -1;
-        public bool ShowRevoked { get; set; }
-        public string MeetingAgendaId { get; set; }
-        public string RequestFromModule { get; set; }
-        public string pkcode { get; set; }
-        public string GeoLvl { get; set; }
-        public DateTime? From { get; set; }
-        public DateTime? To { get; set; }
-        public int? LabId { get; set; }
-        public List<ColumnViewModel> Columns { get; set; }
-        public List<FilterViewModel> Filters { get; set; }
-        public List<SortViewModel> Sorts { get; set; }
+        //public PaginationViewModel()
+        //{
+        //    Filters = new List<FilterViewModel>();
+        //    Sorts = new List<SortViewModel>();
+        //}
+        //public int Draw { get; set; }
+        //public int Page { get; set; }
+        //public int PageSize { get; set; }
+        //public int TotalRecords { get; set; }
+        //public string Search { get; set; }
+        //public string SortBy { get; set; }
+        //public string SortByFieldName { get; set; }
+        //public int SortIndex { get; set; } = -1;
+        //public bool ShowRevoked { get; set; }
+        //public string MeetingAgendaId { get; set; }
+        //public string RequestFromModule { get; set; }
+        //public string pkcode { get; set; }
+        //public string GeoLvl { get; set; }
+        //public DateTime? From { get; set; }
+        //public DateTime? To { get; set; }
+        //public int? LabId { get; set; }
+        //public List<ColumnViewModel> Columns { get; set; }
+        //public List<FilterViewModel> Filters { get; set; }
+        //public List<SortViewModel> Sorts { get; set; }
 
-        public string DivCode { get; set; }
-        public string DisCode { get; set; }
-        public string TehCode { get; set; }
-        public string UCCode { get; set; }
-        public string SupervisorCode { get; set; }
-        public DateFilter DateFilter { get; set; }
-        public string DsgCode { get; set; }
-        public int? SessionCode { get; set; }
-        public string VisitType { get; set; }
-        public bool isLab { get; set; }
-        public string UserId { get; set; }
+        //public string DivCode { get; set; }
+        //public string DisCode { get; set; }
+        //public string TehCode { get; set; }
+        //public string UCCode { get; set; }
+        //public string SupervisorCode { get; set; }
+        //public DateFilter DateFilter { get; set; }
+        //public string DsgCode { get; set; }
+        //public int? SessionCode { get; set; }
+        //public string VisitType { get; set; }
+        //public bool isLab { get; set; }
+        //public string UserId { get; set; }
     }
     public class PaginationResult<T> where T : class
     {

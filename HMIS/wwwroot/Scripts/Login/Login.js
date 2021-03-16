@@ -13,14 +13,14 @@
             return;
         }
         $.ajax({
-            url: '/api/User/login',
+            url: '/api/Authenticate/login',
             type: 'POST',
             data: JSON.stringify(Object),
             // dataType: 'json',
             contentType: 'application/json',
             success: function (data) {
                 if (data != null && data != undefined && (data.token != null && data.token != '' && data.token != undefined)) {
-                    window.open('/Users/adduser');
+                    window.location.replace('/Users/adduser');
                 }
                 else {
                     alert("UserName or Password is Incorrect")

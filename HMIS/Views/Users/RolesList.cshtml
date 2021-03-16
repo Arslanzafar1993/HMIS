@@ -1,0 +1,83 @@
+﻿@section scripts{
+    <script src="~/Scripts/Users/Roles.js"></script>
+}
+<div ng-controller="RolesController">
+    <div ng-hide="UserRoleManage">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <form class="needs-validation" novalidate>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                                <h3>Add Role</h3>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <div class="form-material">
+                                    <input class="form-control" placeholder="ROle Name" type="text" ng-model="RoleName">
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="form-material">
+                                    <button type="button" class="btn btn-sm btn-primary Buttons" ng-click="AddRole();"> Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="main-card mb-3 card">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full dataTable no-footer" id="DataTables_Table_1">
+                <thead>
+                    <tr>
+                        <th>Sr No.</th>
+                        <th>
+                            <strong>Role Name</strong>
+                            <div></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in UserRolesList">
+                        <td>{{$index+1}}</td>
+                        <td>{{item}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div ng-show="UserRoleManage">
+        <div class="main-card mb-3 card">
+            <table class="table table-bordered table-striped table-vcenter js-dataTable-full dataTable no-footer" id="DataTables_Table_1">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            <strong>Role Name</strong>
+                            <div></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(key, value) in UserRolesList.allRoles">
+                        <td><input type="checkbox" id={{key}} /></td>
+                        <td>{{value}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <div>
+                <button type="button" class="btn btn-alt-primary" value="Manage Roles" ng-click="AssignedRoles();">Update Roles</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="UserID" value="@ViewBag.UserID" />
+
+
+
+
+

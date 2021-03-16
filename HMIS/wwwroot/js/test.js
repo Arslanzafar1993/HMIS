@@ -3,7 +3,7 @@
         //alert("sdkdsflj")
         //$http({
         //    method: "POST",
-        //    url: '/api/User/login',
+        //    url: '/api/Authenticate/login',
         //    data: {
         //        username: "string",
         //        password: "string"

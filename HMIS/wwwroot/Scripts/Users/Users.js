@@ -71,6 +71,14 @@ app.controller('AddUser', ["$scope", "commonService", "$http", function ($scope,
     $scope.DataObject = {
         Page: 1, PageSize: 1, TotalRecords: 0
     };
+
+
+    $scope.HFMIS = {
+         division: { code: null },
+        district: { code: null },
+        tehsil: { code: null },
+        HealthFacilityCode: { code: null }
+    }
     $scope.AddEditPatient = {
         UserID: "",
         Username: "",
@@ -79,13 +87,10 @@ app.controller('AddUser', ["$scope", "commonService", "$http", function ($scope,
         ContactNumber: "",
         Password: "",
         ConfirmPassword: "",
-        division: { code: null },
-        district: { code: null },
-        tehsil: { code: null },
-        HealthFacilityCode: { code: null },
         Active: false
     }
     $scope.SaveUser = function () {
+        $scope.AddEditPatient.HealthFacilityCode = $scope.HFMIS.HealthFacilityCode.code;
         var data = JSON.stringify($scope.AddEditPatient);
         $http({
             url: "/api/Authenticate/Register",
@@ -110,17 +115,17 @@ app.controller('AddUser', ["$scope", "commonService", "$http", function ($scope,
             });
         }
         else if (item == "Districts") {
-            var Data = commonService.getDistricts($scope.AddEditPatient.division.code).then(function (res) {
+            var Data = commonService.getDistricts($scope.HFMIS.division.code).then(function (res) {
                 $scope.districtList = res.data;
             });
         }
         else if (item == "Tehsils") {
-            var Data = commonService.getTehsils($scope.AddEditPatient.district.code).then(function (res) {
+            var Data = commonService.getTehsils($scope.HFMIS.district.code).then(function (res) {
                 $scope.tehsilList = res.data;
             });
         }
         else if (item == "HealthFacilities") {
-            var Data = commonService.getHealthFacilities($scope.AddEditPatient.tehsil.code).then(function (res) {
+            var Data = commonService.getHealthFacilities($scope.HFMIS.tehsil.code).then(function (res) {
                 $scope.facilityList = res.data;
             });
         }

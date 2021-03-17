@@ -20,7 +20,7 @@
             contentType: 'application/json',
             success: function (data) {
                 if (data != null && data != undefined && (data.token != null && data.token != '' && data.token != undefined)) {
-                    window.location.replace('/Users/adduser');
+                    window.location.replace('/Users/UserList');
                 }
                 else {
                     alert("UserName or Password is Incorrect")

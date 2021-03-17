@@ -1,177 +1,123 @@
-﻿@section scripts{
-    <script src="~/Scripts/Users/Users.js"></script>
+﻿@section styles
+{
+    <link href="~/Plugins/datatable/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        .select2-container {
+            width: 350px !important;
+        }
+    </style>
 }
-<div ng-controller="UserController">
+@section scripts{
+    <script src="~/Scripts/Users/Users.js"></script>
+    <script src="~/Scripts/Services/commonService.js"></script>
+
+}
+<div ng-controller="AddUser">
     <div class="main-card mb-3 card">
-        <div class="card-body">
-            <h5 class="card-title">Add User</h5>
-            <form class="needs-validation" novalidate>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                            <h2>Add User</h2>
+        <div class="block">
+            <div class="block-header bg-gray-darker">
+                <h3 class="block-title text-white">Add User</h3>
+            </div>
+            <div class="container">
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <div class="form-material form-material-success">
+                            <input class="form-control" placeholder="Full Name" type="text" ng-model="AddEditPatient.Username">
+                            <label for="searchBysearchUniqueId">Full Name </label>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <input class="form-control"  placeholder="Full Name" type="text" ng-model="AddEditPatient.Username">
-                                <label for="searchBysearchUniqueId">Full Name </label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <input class="form-control" placeholder="Email" type="text" ng-model="AddEditPatient.Email">
-                                <label for="searchByCnic">Email </label>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.CNIC">
-                                <label for="searchByCnic">CNIC </label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <input class="form-control"  type="text" placeholder="XXXX-XXXXXXX" ng-model="AddEditPatient.ContactNumber">
-                                <label for="searchBysearchUniqueId">Phone Number  </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.Password">
-                                <label for="searchByCnic"> Password </label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.ConfirmPassword">
-                                <label for="searchByCnic">Confirm Password </label>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="form-material form-material-success">
+                            <input class="form-control" placeholder="Email" type="text" ng-model="AddEditPatient.Email">
+                            <label for="searchByCnic">Email </label>
                         </div>
 
                     </div>
-                    @*<div class="form-group row">
-                            <div class="col-md-6">
-                                <div class="form-material form-material-success">
-                                    <select>
-                                        <option></option>
-                                    </select>
-                                    <label for="searchByCnic">Division </label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-material form-material-success">
-                                    <select>
-                                        <option></option>
-                                    </select>
-                                    <label for="searchByCnic">District </label>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-6">
-                                <div class="form-material form-material-success">
-                                    <select>
-                                        <option></option>
-                                    </select>
-                                    <label for="searchByCnic">Tehsil </label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-material form-material-success">
-                                    <select>
-                                        <option></option>
-                                    </select>
-                                    <label for="searchByCnic">Hospital </label>
-                                </div>
-                            </div>
-                        </div>*@
-                    @*<div class="form-group row">
-                            <div class="col-md-6">
-                                <div class="form-material form-material-success">
-                                    <select>
-                                        <option></option>
-                                    </select>
-                                    <label for="searchByCnic">Occuptaion </label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-material form-material-success">
-                                    <select>
-                                        <option></option>
-                                    </select>
-                                    <label for="searchByCnic">Designation </label>
-                                </div>
-                            </div>
-                        </div>*@
-                    <div class="form-group row">
-
-                        <div class="col-md-3">
-                            <div>
-                                <input type="checkbox" ng-model="AddEditPatient.Active">
-                                <label for="searchByCnic">Active </label>
-                            </div>
+                    <div class="col-md-4">
+                        <div class="form-material form-material-success">
+                            <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.CNIC">
+                            <label for="searchByCnic">CNIC </label>
                         </div>
                     </div>
-                    <div class="form-group row" style="float:right;">
-                        <button type="button" class="btn btn-success btn-sm" ng-click="SaveUser();">Add</button>
-                    </div>
-                    @*<div class="col-md-6">
-                            <div class="form-material form-material-success">
-                                <select>
-                                    <option></option>
-                                </select>
-                                <label for="searchByCnic">Tehsil </label>
-                            </div>
-                        </div>*@
-                    @*<div class="col-md-2">
-                            <div class="form-group">
-                                <label><strong>Disease</strong></label>
-                                <ui-select theme="select2" title="Choose a type">
-                                    <ui-select-match placeholder="Select a Name">{{$item}}</ui-select-match>
-                                    <ui-select-choices repeat="item in diseases | filter:  $select.search">
-                                        <div ng-bind-html="item"></div>
-                                    </ui-select-choices>
-                                    <div ng-bind-html="item">gfgfg</div>
-                                </ui-select>
-                            </div>
-                        </div>
-                        {{diseases}}*@
                 </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <div class="form-material form-material-success">
+                            <input class="form-control" type="text" placeholder="XXXX-XXXXXXX" ng-model="AddEditPatient.ContactNumber">
+                            <label for="searchBysearchUniqueId">Phone Number  </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-material form-material-success">
+                            <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.Password">
+                            <label for="searchByCnic"> Password </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-material form-material-success">
+                            <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.ConfirmPassword">
+                            <label for="searchByCnic">Confirm Password </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <div class="form-material">
+                            <label><strong>Select Division</strong></label>
+                            <ui-select ng-model="AddEditPatient.division" theme="select2" placeholder="Select District" title="Choose a type" on-select="LoadDropdowns('Districts')" name="division">
+                                <ui-select-match placeholder="Select a Name">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="item in divisionList | filter:  $select.search">
+                                    <div ng-bind-html="item.name"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-material">
+                            <label><strong>Select District</strong></label>
+                            <ui-select ng-model="AddEditPatient.district" theme="select2" placeholder="Select District" title="Choose a type" on-select="LoadDropdowns('Tehsils')" name="district">
+                                <ui-select-match placeholder="Select a Name">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="item in districtList | filter:  $select.search">
+                                    <div ng-bind-html="item.name"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-material">
+                            <label><strong>Select Tehsil</strong></label>
+                            <ui-select ng-model="AddEditPatient.tehsil" theme="select2" placeholder="Select District" title="Choose a type" on-select="LoadDropdowns('HealthFacilities')" name="tehsil">
+                                <ui-select-match placeholder="Select a Name">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="item in tehsilList | filter:  $select.search">
+                                    <div ng-bind-html="item.name"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-4">
+                        <div class="form-material">
+                            <label><strong>Select Hospital</strong></label>
+                            <ui-select ng-model="AddEditPatient.HealthFacilityCode" theme="select2" placeholder="Select District" title="Choose a type" name="HealthFacilityCode">
+                                <ui-select-match placeholder="Select a Name">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="item in facilityList | filter:  $select.search">
+                                    <div ng-bind-html="item.name"></div>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div>
+                            <input type="checkbox" ng-model="AddEditPatient.Active">
+                            <label for="searchByCnic">Active </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row" style="float:right;">
+                    <button type="button" class="btn btn-success btn-sm" ng-click="SaveUser();">Add</button>
+                </div>
             </div>
         </div>
     </div>

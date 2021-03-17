@@ -17,6 +17,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using HMIS.Models.Common;
+using DAL.Data.Database.Tables;
 
 namespace HMIS.Controllers
 {
@@ -45,10 +46,10 @@ namespace HMIS.Controllers
 
 
         #region GetUsersList
-       // [Authorize]
+        [AllowAnonymous]
         [HttpPost]
         [Route("GetAllUsers")]
-        public IActionResult GetAllUsers([FromBody] PaginationViewModel model)
+        public IActionResult GetAllUsers( PaginationViewModel model)
         {
             try
             {

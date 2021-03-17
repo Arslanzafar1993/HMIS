@@ -1,52 +1,40 @@
-﻿@section scripts{
-    <script src="~/Scripts/Users/Users.js"></script>
-}
-<div ng-controller="UserController">
-    <div class="main-card mb-3 card">
-        <table class="table table-bordered table-striped table-vcenter js-dataTable-full dataTable no-footer" id="DataTables_Table_1">
-            <thead>
-                <tr>
-                    <th>Sr No.</th>
-                    <th>
-                        <strong>User Name</strong>
-                        <div></div>
-                    </th>
-                    <th>
-                        <strong>Email</strong>
-                        <div></div>
-                    </th>
-                    <th>
-                        <strong>CNIC</strong>
-                        <div></div>
-                    </th>
-                    <th>
-                        <strong>Phone Number</strong>
-                        <div></div>
-                    </th>
-                    <th>
-                        <strong>Created Date</strong>
-                        <div></div>
-                    </th>
-                    <th>
-                        <strong>Actions</strong>
-                        <div></div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="item in UserList">
-                    <td>{{$index+1}}</td>
-                    <td>{{item.userName}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.cnic}}</td>
-                    <td>{{item.phoneNumber}}</td>
-                    <td>{{item.createdOn}}</td>
-                    <td><button type="button" class="btn btn-alt-primary" value="Manage Roles" ng-click="OpenUserRoleList(item.id)">Manage Roles</button></td>
-                </tr>
-            </tbody>
-        </table>
+﻿<div class="row" ng-controller="UserList">
+    <div class="col-md-12">
+        <div class="block">
+            <div class="block-header bg-gray-darker">
+                <h3 class="block-title text-white">User List</h3>
+            </div>
+            <div class="block-content block-content-full">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Sr#</th>
+                                <th>Full Name</th>
+                                <th>Email</th>
+                                <th>CNIC</th>
+                                <th>Phone Number</th>
+                                <th>Created Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+@section styles
+{
+    <link href="~/Plugins/datatable/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+}
+@section scripts
+{
+    <script src="~/Plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="~/Plugins/datatable/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Scripts/Users/Users.js"></script>
+}
 
 
 

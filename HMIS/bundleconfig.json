@@ -4,9 +4,10 @@
     "inputFiles": [
       "wwwroot/css/Theme.css",
       "wwwroot/css/Theme/main.css",
-      "wwwroot/css/Theme/codebase.min.css",
       "wwwroot/Plugins/Angular/ui_select_master/select.css",
-      "wwwroot/Plugins/Angular/ui_select_master/select2.css"
+      "wwwroot/Plugins/Angular/ui_select_master/select2.css",
+      "wwwroot/css/Theme/codebase.min.css"
+
     ]
   },
   {

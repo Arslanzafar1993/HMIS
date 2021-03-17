@@ -15,7 +15,7 @@ namespace DAL
             try
             {
                 using (var db = new HMISDbContext())
-                {
+                { 
                     IQueryable<AspNetUser> UserList;
                     UserList = db.AspNetUsers.AsQueryable();
                     var TotalCount = UserList.Count();

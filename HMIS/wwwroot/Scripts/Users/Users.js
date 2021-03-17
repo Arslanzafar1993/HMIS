@@ -75,9 +75,9 @@ app.controller('AddUser', ["$scope", "commonService", "$http", function ($scope,
 
     $scope.HFMIS = {
          division: { code: null },
-        district: { code: null },
-        tehsil: { code: null },
-        HealthFacilityCode: { code: null }
+         district: { code: null },
+         tehsil: { code: null },
+         HealthFacilityCode: { code: null }
     }
     $scope.AddEditPatient = {
         UserID: "",

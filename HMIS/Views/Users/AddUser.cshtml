@@ -1,7 +1,6 @@
 ﻿@section styles
 {
     <link href="~/Plugins/datatable/css/dataTables.bootstrap.min.css" rel="stylesheet" />
-
     <style>
         .select2-container {
             width: 350px !important;
@@ -11,7 +10,6 @@
 @section scripts{
     <script src="~/Scripts/Users/Users.js"></script>
     <script src="~/Scripts/Services/commonService.js"></script>
-
 }
 <div ng-controller="AddUser">
     <div class="main-card mb-3 card">
@@ -50,13 +48,13 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-material form-material-success">
-                            <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.Password">
+                            <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="password" ng-model="AddEditPatient.Password">
                             <label for="searchByCnic"> Password </label>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-material form-material-success">
-                            <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="text" ng-model="AddEditPatient.ConfirmPassword">
+                            <input class="form-control" placeholder="XXXXX-XXXXXXX-X" type="password" ng-model="AddEditPatient.ConfirmPassword">
                             <label for="searchByCnic">Confirm Password </label>
                         </div>
                     </div>

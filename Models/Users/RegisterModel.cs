@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using static Models.Common.CommonModels;
 
 namespace Models.Users
 {
@@ -15,10 +16,11 @@ namespace Models.Users
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string HealthFacilityCode { get; set; }
-
         public bool Active { get; set; }
-        public string division { get; set; }
-        public string district { get; set; }
-        public string tehsil { get; set; }
+        public DDLModel Division { get; set; }
+        public DDLModel District { get; set; }
+        public DDLModel Tehsil { get; set; }
+        public DDLModel HealthFacility { get; set; }
+        public string tehsilcode { get; set; }
     }
 }

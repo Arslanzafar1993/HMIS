@@ -75,7 +75,7 @@ namespace DAL
                 throw ex;
             }
         }
-        public List<DDLModel> GetOccupationList ()
+        public List<DDLModel> GetOccupationList()
         {
             try
             {
@@ -90,7 +90,35 @@ namespace DAL
                 throw ex;
             }
         }
-       
+        public HealthFacilityListModel GetHealthFacilitiesData(string HealthFacilityCode = "")
+        {
+            try
+            {
+                using (var db = new HMISDbContext())
+                {
+                    return db.HealthFacilityDetails.Where(a => a.HFMISCode == HealthFacilityCode).Select(x => new HealthFacilityListModel
+                    {
+                        divisionCode = x.DivisionCode,
+                        DivisionName = x.DivisionName,
+
+                        districtCode = x.DistrictCode,
+                        DistrictName = x.DistrictName,
+
+                        tehsilCode = x.TehsilCode,
+                        TehsilName = x.TehsilName,
+
+                        HFMISCode = x.HFMISCode,
+                        HeathFacilityName = x.FullName,
+                    }).FirstOrDefault();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         #endregion
     }
 }

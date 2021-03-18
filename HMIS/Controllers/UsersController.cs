@@ -14,8 +14,9 @@ namespace HMIS.Controllers
         {
             return View();
         }
-        public IActionResult AddUser()
+        public IActionResult AddUser(String ID)
         {
+            ViewBag.UserID = ID;
             return View();
         }
         public IActionResult RolesList(String ID)

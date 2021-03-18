@@ -13,9 +13,9 @@ namespace Models.HealthFacility
         public string DistrictName { get; set; }
         public string tehsilCode { get; set; }
         public string TehsilName { get; set; }
-        public string HospitalName { get; set; }
+        public string HFMISCode { get; set; }
+        public string HeathFacilityName { get; set; }
         public string category { get; set; }
-        public string Identifier { get; set; }
 
     }
 }

@@ -89,7 +89,7 @@ namespace HMIS.Controllers
                     UserInfo.CNIC = model.CNIC;
                     UserInfo.Email = model.Email;
                     UserInfo.PhoneNumber = model.ContactNumber;
-                    UserInfo.HealthFacilityCode = model.HealthFacilityCode;
+                    UserInfo.HealthFacilityCode = model.HealthFacility.Code;
                     UserInfo.UpdatedOn = DateTime.Now;
                     await userManager.UpdateAsync(UserInfo);
                 }

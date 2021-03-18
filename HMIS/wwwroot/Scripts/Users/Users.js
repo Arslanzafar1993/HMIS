@@ -1,4 +1,5 @@
-﻿angular.module("myApp").requires.push('ngSanitize');
+﻿
+angular.module("myApp").requires.push('ngSanitize');
 angular.module("myApp").requires.push('ui.select');
 app.controller('UserList', ["$scope", "$http", function ($scope, $http) {
     $scope.divisionList = [];
@@ -46,7 +47,7 @@ app.controller('UserList', ["$scope", "$http", function ($scope, $http) {
                     {
                         data: null,
                         render: function (data, type, row, meta) {
-                            return '<a href="/Users/Roleslist?Id=' + data.id + '" target="_blank" class="btn-success btn-sm">Manage Roles</a>';
+                            return '<a href="/Users/Roleslist?Id=' + data.id + '" target="_blank" class="btn-success btn-sm">Manage Roles</a>&nbsp<a href="/Users/AddUser?Id=' + data.id + '" target="_blank" class="btn-success btn-sm">Edit</a>';
                             return '';
                         }
                     }
@@ -71,26 +72,7 @@ app.controller('AddUser', ["$scope", "commonService", "$http", function ($scope,
     $scope.DataObject = {
         Page: 1, PageSize: 1, TotalRecords: 0
     };
-
-
-    $scope.HFMIS = {
-         division: { code: null },
-         district: { code: null },
-         tehsil: { code: null },
-         HealthFacilityCode: { code: null }
-    }
-    $scope.AddEditPatient = {
-        UserID: "",
-        Username: "",
-        Email: "",
-        CNIC: "",
-        ContactNumber: "",
-        Password: "",
-        ConfirmPassword: "",
-        Active: false
-    }
     $scope.SaveUser = function () {
-        $scope.AddEditPatient.HealthFacilityCode = $scope.HFMIS.HealthFacilityCode.code;
         var data = JSON.stringify($scope.AddEditPatient);
         $http({
             url: "/api/Authenticate/Register",
@@ -108,6 +90,27 @@ app.controller('AddUser', ["$scope", "commonService", "$http", function ($scope,
         });
     };
 
+
+    $scope.GetUserDetails = function () {
+        $http({
+            url: "/api/User/GetUserForupdate?userId=" + $scope.UserID,
+            method: "GET",
+            transformRequest: angular.identity,
+            contentType: 'application/json',
+        }).then(function (res) {
+            if (res.data != null) {
+                $scope.AddEditPatient = res.data;
+                if ($scope.AddEditPatient.division.code != null && $scope.AddEditPatient.division.code)
+                    $scope.LoadDropdowns("Districts")
+                if ($scope.AddEditPatient.district.code != null && $scope.AddEditPatient.district.code)
+                    $scope.LoadDropdowns("Tehsils")
+                if ($scope.AddEditPatient.tehsil.code != null && $scope.AddEditPatient.tehsil.code)
+                    $scope.LoadDropdowns("HealthFacilities")
+            }
+        });
+    };
+
+
     $scope.LoadDropdowns = function (item) {
         if (item == "Divisions") {
             var Data = commonService.getDivisions().then(function (res) {
@@ -115,24 +118,29 @@ app.controller('AddUser', ["$scope", "commonService", "$http", function ($scope,
             });
         }
         else if (item == "Districts") {
-            var Data = commonService.getDistricts($scope.HFMIS.division.code).then(function (res) {
+            var Data = commonService.getDistricts($scope.AddEditPatient.division.code).then(function (res) {
                 $scope.districtList = res.data;
             });
         }
         else if (item == "Tehsils") {
-            var Data = commonService.getTehsils($scope.HFMIS.district.code).then(function (res) {
+            var Data = commonService.getTehsils($scope.AddEditPatient.district.code).then(function (res) {
                 $scope.tehsilList = res.data;
             });
         }
         else if (item == "HealthFacilities") {
-            var Data = commonService.getHealthFacilities($scope.HFMIS.tehsil.code).then(function (res) {
+            var Data = commonService.getHealthFacilities($scope.AddEditPatient.tehsil.code).then(function (res) {
                 $scope.facilityList = res.data;
             });
         }
-
     };
     angular.element(document).ready(function () {
+        debugger
         $scope.LoadDropdowns("Divisions")
+        var UserID = $("#UserID").val();
+        $scope.UserID = UserID;
+        if ($scope.UserID != null && $scope.UserID != "" && $scope.UserID != undefined) {
+            $scope.GetUserDetails();
+        }
     });
 }]);
 

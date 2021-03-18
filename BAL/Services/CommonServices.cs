@@ -86,6 +86,18 @@ namespace BAL.Services
                 throw ex;
             }
         }
+        public HealthFacilityListModel GetHealthFacilityData(string HealthFacilityCode = "")
+        {
+            try
+            {
+                return _commonDAL.GetHealthFacilitiesData(HealthFacilityCode);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         #endregion
     }
 }

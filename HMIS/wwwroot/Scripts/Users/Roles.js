@@ -61,7 +61,6 @@
 
 
     $scope.AssignedRoles = function () {
-        debugger;
         if ($scope.UserRolesList.allRoles.length > 0) {
             for (var a = 0; a < $scope.UserRolesList.allRoles.length; a++) {
                 var value = $("#" + [a]).prop("checked");

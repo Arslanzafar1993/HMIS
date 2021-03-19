@@ -21,7 +21,6 @@ namespace HMIS
             Configuration = configuration;
             //Configuration = new ConfigurationBuilder()
             //    .AddJsonFile("appsettings.json")
-            //    //.AddJsonFile("bundleconfig.json")
             //    .Build();
         }
 

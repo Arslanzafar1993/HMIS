@@ -34,6 +34,7 @@ namespace HMIS.Controllers
             _configuration = configuration;
             //_UserService = new UserService(userManager);
         }
+      
         [HttpPost]
         [Route("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
@@ -218,6 +219,13 @@ namespace HMIS.Controllers
             return BadRequest("");
         }
 
+        [HttpGet]
+        [Route("LogOff")]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> LogOff()
+        {
+            return RedirectToAction("Login", "Users");
+        }
         #endregion
     }
 }

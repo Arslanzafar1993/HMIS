@@ -1,6 +1,7 @@
 ﻿
 angular.module("myApp").requires.push('ngSanitize');
 angular.module("myApp").requires.push('ui.select');
+angular.module("myApp").requires.push('ui.select');
 app.controller('UserList', ["$scope", "$http", function ($scope, $http) {
     $scope.divisionList = [];
     $scope.districtList = [];
@@ -82,7 +83,8 @@ app.controller('AddUser', ["$scope", "commonService", "$http", function ($scope,
             contentType: 'application/json',
         }).then(function (res) {
             if (res.data.messages != "") {
-                alert(res.data.messages);
+                toastr.success(res.data.messages);
+               // alert(res.data.messages);
             }
             else {
                 alert("Failure");

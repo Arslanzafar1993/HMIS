@@ -4,6 +4,7 @@
     "inputFiles": [
       "wwwroot/css/Theme.css",
       "wwwroot/css/Theme/main.css",
+      "wwwroot/Plugins/toastr/toastr.min.css",
       "wwwroot/Plugins/Angular/ui_select_master/select.css",
       "wwwroot/Plugins/Angular/ui_select_master/select2.css",
       "wwwroot/css/Theme/codebase.min.css"
@@ -22,6 +23,7 @@
       "wwwroot/Plugins/Angular/angular/angular-sanitize.js",
 
       "wwwroot/Plugins/Angular/ui-bootstrap/ui-bootstrap-tpls-2.5.0.min.js",
+      "wwwroot/Plugins/toastr/toastr.min.js",
       "wwwroot/Plugins/Angular/ui_select_master/select.js",
 
 

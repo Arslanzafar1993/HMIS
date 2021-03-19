@@ -23,11 +23,12 @@
                     window.location.replace('/Users/UserList');
                 }
                 else {
-                    alert("UserName or Password is Incorrect")
+                    toastr.error("UserName or Password is Incorrect");
+                   // alert("UserName or Password is Incorrect")
                 }
             },
             error: function (request, error) {
-                alert("UserName or Password is Incorrect")
+                toastr.error("UserName or Password is Incorrect");
             }
         });
     }

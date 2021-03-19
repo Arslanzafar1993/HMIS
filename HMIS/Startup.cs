@@ -31,7 +31,7 @@ namespace HMIS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             // For Entity Framework
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));
